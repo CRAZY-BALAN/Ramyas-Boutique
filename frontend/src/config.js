@@ -1,8 +1,8 @@
 // ✏️ EDIT EVERYTHING HERE – the whole site reads from this file.
 export const config = {
   name: "Ramya’s Boutique",
-  whatsapp: "919999999999", // country code + number, no + or spaces  (REPLACE)
-  phone: "+91 99999 99999",
+  whatsapp: "919659871091", // country code + number, no + or spaces  (REPLACE)
+  phone: "+91 96598 71901",
   instagram: "https://www.instagram.com/your_boutique_handle", // REPLACE
   address: "Shop No. 12, Main Road, Your Town, Tamil Nadu – 600000", // REPLACE
   mapUrl: "https://maps.google.com/?q=Ramya%27s+Boutique", // REPLACE with the real Google Maps link
