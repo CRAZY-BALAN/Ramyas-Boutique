@@ -1,0 +1,24 @@
+:root{--pg:#0B6E6E;--pg2:#1A9A8F;--tint:#E6F4F1;--ink:#1c2321;--mut:#6b7774;--line:#e8eeec;--r:16px;--sh:0 6px 24px rgba(11,110,110,.12);--nav:64px;--serif:"Playfair Display",Georgia,serif;--sans:"Poppins",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--pg2);outline-offset:2px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.sec{padding:56px 0}.tint{background:linear-gradient(180deg,var(--tint),#fff)}
+.h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--pg);text-align:center;margin-bottom:28px}
+.h2::after{content:"";display:block;width:70px;height:2px;margin:10px auto 0;background:repeating-linear-gradient(90deg,var(--pg2) 0 6px,transparent 6px 10px)}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;padding:12px 26px;border-radius:999px;background:var(--pg);color:#fff;font-weight:500;transition:.25s;box-shadow:var(--sh)}
+.btn:hover{background:var(--pg2);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--pg);border:1.5px solid var(--pg)}
+.btn.wa{background:#128C7E}
+.btn.block{width:100%}
+.skel{background:linear-gradient(90deg,#eef3f2 25%,#f8fbfa 50%,#eef3f2 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:8px}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.shake{animation:shake .45s}
+@keyframes draw{from{stroke-dashoffset:400}to{stroke-dashoffset:0}}
+@keyframes fall{0%{transform:translateY(-120%)}100%{transform:translateY(120vh)}}
+@keyframes wave{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

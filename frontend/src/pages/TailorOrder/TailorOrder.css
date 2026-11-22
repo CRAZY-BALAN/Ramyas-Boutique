@@ -1,0 +1,23 @@
+.to .wrap:first-child{padding-top:16px}
+.slider{position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--sh);max-width:760px;margin:0 auto}
+.slides{display:flex;transition:transform .6s ease}.slide{flex:0 0 100%}
+.dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.7)}.dots .on{background:var(--pg);width:24px;border-radius:99px;transition:.3s}
+.to-desc{max-width:760px;margin:22px auto 0;display:grid;gap:10px;justify-items:start}
+.to-desc p{display:flex;gap:10px;align-items:flex-start}.to-desc svg{flex:none;color:var(--pg);margin-top:3px}
+.chat{max-width:520px;margin:0 auto;background:#fff;padding:22px;border-radius:var(--r);box-shadow:var(--sh);display:grid;gap:14px;border:1.5px dashed var(--pg2)}
+.fld{display:grid;gap:4px;font-size:.88rem}.fld span{font-weight:500;color:var(--pg)}
+.fld input,.fld textarea{padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;width:100%;background:#fff}
+.fld input:focus,.fld textarea:focus{outline:0;border-color:var(--pg2)}.fld [aria-invalid=true]{border-color:#d92d4a}
+.fld em{color:#d92d4a;font-style:normal;font-size:.8rem}
+.chat small{color:var(--mut);text-align:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.stats div{background:var(--tint);border-radius:var(--r);padding:20px 6px}
+.stats b{display:block;font-family:var(--serif);font-size:clamp(1.8rem,7vw,3rem);color:var(--pg)}.stats span{font-size:.78rem;color:var(--mut)}
+.team{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));max-width:720px;margin:0 auto}
+.member{display:flex;flex-direction:column;align-items:center;padding:20px;border-radius:var(--r);box-shadow:var(--sh);text-align:center}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--tint);color:var(--pg);display:grid;place-items:center;margin-bottom:10px}.member small{color:var(--mut)}
+.steps{list-style:none;max-width:560px;margin:0 auto;position:relative;display:grid;gap:22px}
+.steps::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;border-left:2px dashed var(--pg2)}
+.steps li{display:flex;gap:16px;position:relative}.steps p{font-size:.9rem;color:var(--mut)}
+.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--pg);color:#fff;display:grid;place-items:center;z-index:1}

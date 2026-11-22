@@ -1,0 +1,25 @@
+.hero{position:relative;overflow:hidden;padding:56px 0 90px;background:linear-gradient(180deg,#fff,var(--tint));text-align:center}
+.thread{position:absolute;top:0;width:1.5px;height:90px;background:linear-gradient(var(--pg2),transparent);opacity:.5;animation:fall linear infinite}
+.thread::after{content:"";position:absolute;bottom:0;left:-3px;width:7px;height:7px;border-radius:50%;background:var(--pg2)}
+.hero-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,4vw,1.6rem);color:var(--mut)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.wave{position:absolute;bottom:-1px;left:0;width:200%;height:60px;fill:#fff;animation:wave 14s linear infinite}
+.marquee{overflow:hidden;background:var(--pg);color:#fff;padding:10px 0;white-space:nowrap}
+.marquee div{display:inline-block;animation:wave 40s linear infinite}
+.marquee span{margin:0 22px;font-family:var(--serif);font-style:italic}
+.search{display:flex;align-items:center;gap:10px;max-width:420px;margin:0 auto 16px;padding:10px 16px;border:1.5px solid var(--line);border-radius:99px;color:var(--mut)}
+.search:focus-within{border-color:var(--pg2)}.search input{border:0;outline:0;flex:1;background:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 18px;justify-content:flex-start}
+@media(min-width:700px){.chips{justify-content:center}}
+.chips button{flex:none;padding:7px 18px;border-radius:99px;border:1.5px solid var(--line);font-size:.88rem;transition:.2s}
+.chips button.on,.chips button:hover{background:var(--pg);color:#fff;border-color:var(--pg)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+.empty{text-align:center;color:var(--mut);padding:30px}
+.why{display:grid;gap:16px}@media(min-width:768px){.why{grid-template-columns:repeat(3,1fr)}}
+.why-card{background:#fff;border-radius:var(--r);padding:26px;text-align:center;box-shadow:var(--sh)}
+.why-card span{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--pg);margin-bottom:10px;transition:.4s}
+.why-card:hover span{transform:rotate(360deg);background:var(--pg);color:#fff}
+.why-card h3{font-family:var(--serif);font-style:italic;color:var(--pg)}.why-card p{font-size:.9rem;color:var(--mut)}

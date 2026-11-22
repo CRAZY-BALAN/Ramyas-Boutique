@@ -1,0 +1,6 @@
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pg),var(--pg2));transform-origin:0;z-index:100}
+.btt{position:fixed;left:16px;bottom:84px;z-index:40;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--pg);display:grid;place-items:center;box-shadow:var(--sh)}
+.fwa{position:fixed;right:16px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(37,211,102,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.intro{position:fixed;inset:0;z-index:999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.intro-thread{width:min(70vw,260px);fill:none;stroke:var(--pg2);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:400;animation:draw 1.6s ease forwards}

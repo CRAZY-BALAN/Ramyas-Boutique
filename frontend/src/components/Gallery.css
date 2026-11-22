@@ -1,0 +1,19 @@
+.gal{display:flex;flex-direction:column-reverse;gap:10px}
+.gal-thumbs{display:flex;gap:8px;overflow-x:auto;padding:2px}
+.gal-thumbs button{flex:none;width:64px;border-radius:10px;overflow:hidden;border:2px solid transparent;opacity:.7;transition:.2s}
+.gal-thumbs button.on{border-color:var(--pg);opacity:1}
+.gal-main{position:relative;border-radius:var(--r);overflow:hidden;background:var(--tint)}
+.gal-lens{display:none;position:absolute;inset:0;background-size:250%;background-repeat:no-repeat;pointer-events:none;z-index:2}
+@media(hover:hover) and (min-width:900px){.gal-main:hover .gal-lens{display:block}}
+.gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--pg);z-index:3;box-shadow:var(--sh)}
+.gal-arrow.l{left:8px}.gal-arrow.r{right:8px}
+.gal-zoom{position:absolute;right:10px;bottom:10px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--pg)}
+.gal-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.gal-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.7)}.gal-dots span.on{background:var(--pg);width:20px;border-radius:99px}
+@media(min-width:900px){.gal{flex-direction:row}.gal-thumbs{flex-direction:column;overflow:visible}.gal-main{flex:1}.gal-dots{display:none}}
+.lb{position:fixed;inset:0;background:rgba(10,20,20,.94);z-index:200;display:grid;place-items:center}
+.lb .gal-arrow{z-index:5}
+.lb-x{position:absolute;top:14px;right:14px;z-index:5;width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.lb-hint{position:absolute;bottom:16px;color:#cfe;font-size:.78rem;text-align:center;width:100%;pointer-events:none}
+.zm{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;touch-action:none;cursor:grab}
+.zm img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .08s;user-select:none}

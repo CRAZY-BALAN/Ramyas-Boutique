@@ -1,0 +1,23 @@
+.dd{padding-top:16px;padding-bottom:90px}
+.crumbs{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:.8rem;color:var(--mut);flex-wrap:wrap}
+.dd-grid{display:grid;gap:22px}@media(min-width:900px){.dd-grid{grid-template-columns:1.1fr 1fr;gap:44px}}
+.dd h1{font-family:var(--serif);font-style:italic;color:var(--pg);font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.2}
+.dd-price{font-size:1.6rem;font-weight:600;margin:6px 0}
+.dd-desc{color:var(--mut);margin-bottom:14px}
+.dd-meta{display:grid;grid-template-columns:70px 1fr;gap:6px 10px;font-size:.9rem;margin-bottom:20px;padding:14px;background:var(--tint);border-radius:12px}
+.dd-meta dt{font-weight:600;color:var(--pg)}
+.dd-sizes-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.dd-sizes-head button{display:flex;align-items:center;gap:6px;color:var(--pg);font-weight:500;font-size:.88rem;text-decoration:underline}
+.sizes{display:flex;gap:10px;flex-wrap:wrap}
+.size{min-width:52px;height:46px;border:1.5px solid var(--line);border-radius:12px;font-weight:500;transition:.2s}
+.size:hover:not(:disabled){border-color:var(--pg)}.size.on{background:var(--pg);color:#fff;border-color:var(--pg)}
+.size:disabled{color:#bbb;background:repeating-linear-gradient(135deg,#fafafa 0 6px,#f0f0f0 6px 8px);text-decoration:line-through;cursor:not-allowed}
+.dd-err{color:#d92d4a;font-size:.88rem;margin-top:8px}
+.dd-prev{margin:16px 0;font-size:.85rem;color:var(--mut)}.dd-prev pre{white-space:pre-wrap;font-family:inherit;background:#f6faf9;padding:12px;border-radius:10px;margin-top:8px}
+.dd-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{flex:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--pg)}
+.dd-note{font-size:.78rem;color:var(--mut);margin-top:10px}
+.dd-rel{margin-top:50px}
+.dd-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:#fff;box-shadow:0 -4px 18px rgba(0,0,0,.1);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dd-bar small{display:block;color:var(--mut);font-size:.72rem;max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:900px){.dd-bar{display:none}.dd{padding-bottom:20px}}

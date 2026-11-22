@@ -1,0 +1,7 @@
+.logo{display:inline-flex;flex-direction:column;line-height:1;color:var(--pg)}
+.logo-main{position:relative;font-family:var(--serif);font-style:italic;font-weight:800;font-size:1.7rem;padding-bottom:8px}
+.logo-r{font-size:1.5em;margin-right:1px;color:var(--pg2)}
+.logo-flourish{position:absolute;left:0;bottom:-2px;width:100%;height:12px;fill:none;stroke:var(--pg2);stroke-width:2;stroke-linecap:round;stroke-dasharray:400;animation:draw 2s ease forwards}
+.logo-sub{font-size:.58rem;letter-spacing:.5em;font-weight:500;margin-top:2px;color:var(--mut);padding-left:2px}
+.logo-lg .logo-main{font-size:clamp(3rem,13vw,5.5rem)}.logo-lg .logo-sub{font-size:clamp(.7rem,2.5vw,1rem)}
+.logo-sm .logo-main{font-size:1.35rem}

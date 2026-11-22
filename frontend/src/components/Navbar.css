@@ -1,0 +1,218 @@
+
+/* ================================
+   NAVBAR
+================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s ease;
+}
+
+.nav.scrolled {
+  box-shadow: 0 2px 16px rgba(11, 110, 110, 0.12);
+}
+
+.nav-in {
+  height: var(--nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop navigation */
+
+.nav-links {
+  display: none;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links button,
+.drawer a,
+.drawer button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-links a::after,
+.nav-links button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: var(--pg2);
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links button:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--pg);
+}
+
+/* Three-dot menu button */
+
+.nav-dots {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--pg);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 10002;
+  flex-shrink: 0;
+}
+
+.nav-dots:hover {
+  background: var(--tint);
+}
+
+/* Background overlay */
+
+.drawer-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 10000;
+}
+
+/* Mobile drawer */
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: min(78vw, 300px);
+
+  background: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+
+  z-index: 10001;
+
+  padding: 75px 24px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  overflow-y: auto;
+
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Drawer navigation */
+
+.drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  background: #ffffff;
+}
+
+.drawer a,
+.drawer button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 8px;
+
+  border-bottom: 1px dashed #e8eeec;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  width: 100%;
+
+  color: #1c2321;
+  background: #ffffff;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.drawer a:hover,
+.drawer button:hover {
+  color: var(--pg);
+  background: #f5fbf9;
+}
+
+.drawer a.active {
+  color: var(--pg);
+}
+
+/* Desktop responsive layout */
+
+@media (min-width: 900px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-dots {
+    display: none;
+  }
+
+  .drawer,
+  .drawer-bg {
+    display: none;
+  }
+}
+/* Fix mobile drawer clipping */
+.nav:has(.drawer) {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  width: min(78vw, 300px) !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+
+  background: #ffffff !important;
+  opacity: 1 !important;
+
+  z-index: 10001 !important;
+  overflow-y: auto !important;
+
+  padding: 75px 24px 24px !important;
+  box-sizing: border-box;
+}
+
+.drawer-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10000 !important;
+}
+
+.nav-dots {
+  position: relative;
+  z-index: 10002 !important;
+}
