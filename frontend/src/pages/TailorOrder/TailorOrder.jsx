@@ -18,14 +18,28 @@ const steps = [
   { Icon: Package, t: "Delivery", d: "Delivered through a delivery service." },
 ];
 const empty = { name: "", phone: "", type: "", desc: "", date: "" };
-
+function Field({ k, label, value, onChange, error, ...props }) {
+  return (
+    <label className="fld">
+      <span>{label}</span>
+      <input
+        value={value}
+        onChange={onChange}
+        aria-invalid={!!error}
+        {...props}
+      />
+      {error && <em role="alert">{error}</em>}
+    </label>
+  );
+}
 export default function TailorOrder() {
   const [i, setI] = useState(0);
   const [f, setF] = useState(empty);
   const [errs, setErrs] = useState({});
   const sx = useRef(null);
   useEffect(() => { const t = setInterval(() => setI((v) => (v + 1) % shop.length), 3500); return () => clearInterval(t); }, []);
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const set = (k) => (e) =>
+   setF((prev) => ({ ...prev, [k]: e.target.value }));
   const submit = (e) => {
     e.preventDefault();
     const er = {};
@@ -38,9 +52,7 @@ export default function TailorOrder() {
     // Send customer details directly to WhatsApp
     openWA(tailorMessage(f));
   };
-  const Field = ({ k, label, ...p }) => (
-    <label className="fld"><span>{label}</span><input value={f[k]} onChange={set(k)} aria-invalid={!!errs[k]} {...p} />{errs[k] && <em role="alert">{errs[k]}</em>}</label>
-  );
+  
   return (
     <div className="to">
       <div className="wrap"><BackButton /></div>
@@ -57,18 +69,72 @@ export default function TailorOrder() {
         </div>
       </section>
 
-      <section className="sec tint"><div className="wrap">
-        <h2 className="h2">Chat with us</h2>
-        <form className="chat" onSubmit={submit} noValidate>
-          <Field k="name" label="Your name" autoComplete="name" />
-          <Field k="phone" label="Phone number" type="tel" autoComplete="tel" />
-          <Field k="type" label="Dress type (e.g. blouse, lehenga)" />
-          <label className="fld"><span>Description</span><textarea rows="3" maxLength={500} value={f.desc} onChange={set("desc")} aria-invalid={!!errs.desc} />{errs.desc && <em role="alert">{errs.desc}</em>}</label>
-          <Field k="date" label="Preferred date (optional)" type="date" />
-          <button className="btn wa block" type="submit"><MessageCircle size={18} /> Continue on WhatsApp</button>
-          <small>Your message opens in WhatsApp. We confirm the order with you there.</small>
-        </form>
-      </div></section>
+      <section className="sec tint">
+  <div className="wrap">
+    <h2 className="h2">Chat with us</h2>
+
+    <form className="chat" onSubmit={submit} noValidate>
+
+      <Field
+        k="name"
+        label="Your name"
+        value={f.name}
+        onChange={set("name")}
+        error={errs.name}
+        autoComplete="name"
+      />
+
+      <Field
+        k="phone"
+        label="Phone number"
+        value={f.phone}
+        onChange={set("phone")}
+        error={errs.phone}
+        type="tel"
+        autoComplete="tel"
+      />
+
+      <Field
+        k="type"
+        label="Dress type (e.g. blouse, lehenga)"
+        value={f.type}
+        onChange={set("type")}
+        error={errs.type}
+      />
+
+      <label className="fld">
+        <span>Description</span>
+        <textarea
+          rows="3"
+          maxLength={500}
+          value={f.desc}
+          onChange={set("desc")}
+          aria-invalid={!!errs.desc}
+        />
+        {errs.desc && <em role="alert">{errs.desc}</em>}
+      </label>
+
+      <Field
+        k="date"
+        label="Preferred date (optional)"
+        value={f.date}
+        onChange={set("date")}
+        error={errs.date}
+        type="date"
+      />
+
+      <button className="btn wa block" type="submit">
+        <MessageCircle size={18} />
+        Continue on WhatsApp
+      </button>
+
+      <small>
+        Your message opens in WhatsApp. We confirm the order with you there.
+      </small>
+
+    </form>
+  </div>
+</section>
 
       <section className="sec wrap">
         <div className="stats">
