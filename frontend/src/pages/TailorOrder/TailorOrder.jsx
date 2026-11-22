@@ -35,8 +35,7 @@ export default function TailorOrder() {
     if (f.desc.trim().length < 5) er.desc = "Add a short description";
     setErrs(er);
     if (Object.keys(er).length) return;
-    const api = import.meta.env.VITE_API_URL;
-    if (api) fetch(`${api}/api/enquiries`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(f) }).catch(() => {});
+    // Send customer details directly to WhatsApp
     openWA(tailorMessage(f));
   };
   const Field = ({ k, label, ...p }) => (
